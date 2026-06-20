@@ -1,0 +1,8 @@
+{
+  "name": "Gestión de Taller de Electrónica",
+  "description": "Sistema profesional de administración para talleres de reparación de electrónica, incluyendo clientes, control de equipos por serial, órdenes de reparación, certificados de garantía, evidencias fotográficas, búsqueda inteligente de fallas y portal de cliente.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
