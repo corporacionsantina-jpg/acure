@@ -160,8 +160,8 @@ export default function DashboardPanel({
             </button>
           </div>
 
-          <div className="h-64" id="chart-revenues">
-            <ResponsiveContainer width="100%" height="100%">
+          <div className="h-64 min-w-0 min-h-0" id="chart-revenues">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
               <LineChart data={salesHistory} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#141414" opacity={0.15} />
                 <XAxis dataKey="mes" stroke="#141414" fontSize={11} tickLine={false} />
@@ -180,11 +180,11 @@ export default function DashboardPanel({
             <p className="text-[11px] font-serif italic text-[#141414]/60">Frecuencia por fabricante en equipos.</p>
           </div>
 
-          <div className="h-48 mx-auto w-full max-w-[200px]" id="chart-brands">
+          <div className="h-48 mx-auto w-full max-w-[200px] min-w-0 min-h-0" id="chart-brands">
             {brandData.length === 0 ? (
               <div className="h-full flex items-center justify-center text-[#141414]/60 italic font-serif text-xs">Sin información de base.</div>
             ) : (
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
                 <PieChart>
                   <Pie data={brandData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={42} outerRadius={60} paddingAngle={3}>
                     {brandData.map((entry, index) => (
