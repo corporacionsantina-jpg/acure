@@ -1017,6 +1017,29 @@ app.post('/api/drive/backup', async (req, res) => {
   });
 });
 
+app.post('/api/config/respaldo', async (req, res) => {
+  try {
+    const db = await loadDatabase();
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const fileName = `taller_db_backup_${timestamp}.json`;
+    const backupId = `BK-${Date.now()}`;
+    const replicaPath = path.join(path.dirname(DB_PATH), fileName);
+    
+    // Save backup replication
+    fs.writeFileSync(replicaPath, JSON.stringify(db, null, 2));
+
+    res.json({
+      success: true,
+      drive_folder_name: '/TALLER_ELECTRONICA/BACKUPS/Base_Datos/',
+      file_name: fileName,
+      backup_id: backupId
+    });
+  } catch (error: any) {
+    console.error('[Backup Error]', error);
+    res.status(500).json({ error: 'Failed to generate backup', message: error.message });
+  }
+});
+
 // SERVICE: GEMINI INTELLIGENT AI DIAGNOSIS
 app.post('/api/gemini/diagnose', async (req, res) => {
   const { marca, modelo, falla, sintomas } = req.body;
@@ -1191,6 +1214,15 @@ Debes devolver la respuesta estrictamente estructurada en formato JSON válido c
 function year(): number {
   return new Date().getFullYear();
 }
+
+// Global Error Handler Middleware to prevent returning HTML err pages on unhandled API errors
+app.use((err: any, req: any, res: any, next: any) => {
+  console.error('[Global Server Error]', err);
+  res.status(500).json({
+    error: 'Ocurrió un error interno en el servidor del taller.',
+    message: err.message || String(err)
+  });
+});
 
 startServer();
 

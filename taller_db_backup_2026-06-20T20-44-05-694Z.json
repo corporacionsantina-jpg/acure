@@ -1,0 +1,356 @@
+{
+  "clientes": [
+    {
+      "id": "cli-1",
+      "cedula": "V-19827364",
+      "nombre_completo": "Juan Pérez Delgado",
+      "telefono": "+58 412-1234567",
+      "email": "juan.perez@gmail.com",
+      "direccion": "Av. Solano Lopez, Edif. Altamira Apt 4B, Caracas",
+      "fecha_registro": "2026-05-10T10:00:00Z",
+      "notas": "Cliente recurrente. Prefiere contacto por WhatsApp.",
+      "activo": true
+    },
+    {
+      "id": "cli-2",
+      "cedula": "V-24883192",
+      "nombre_completo": "María Alexandra Delgado",
+      "telefono": "+58 424-9876543",
+      "email": "maria.alex@outlook.com",
+      "direccion": "Calle Los Mangos, Residencias Girasol Piso 2, Maracay",
+      "fecha_registro": "2026-06-01T15:30:00Z",
+      "notas": "Exige presupuestos detallados por correo.",
+      "activo": true
+    },
+    {
+      "id": "cli-3",
+      "cedula": "V-12055678",
+      "nombre_completo": "Carlos Eduardo Espinoza",
+      "telefono": "+58 416-5558899",
+      "email": "carlos.espinoza@techcorp.ve",
+      "direccion": "Urbanización La Trinidad, Calle 3, Qta El Samán, Caracas",
+      "fecha_registro": "2026-06-12T11:15:00Z",
+      "notas": "Equipos corporativos de oficina.",
+      "activo": true
+    }
+  ],
+  "equipos": [
+    {
+      "id": "eq-1",
+      "cliente_id": "cli-1",
+      "marca": "Samsung",
+      "modelo": "Galaxy S21",
+      "serial": "SN-SAMS21-9875A",
+      "tipo_equipo": "celular",
+      "color": "Negro Fantasma",
+      "accesorios_recibidos": [
+        "Cargador",
+        "Funda de silicona"
+      ],
+      "estado_ingreso": "regular",
+      "observaciones_ingreso": "Micro-rayones en cristal trasero, pantalla astillada en esquina inferior derecha. No carga adecuadamente.",
+      "fotos_ingreso": [],
+      "fecha_ingreso": "2026-05-10T10:15:00Z",
+      "activo": true
+    },
+    {
+      "id": "eq-2",
+      "cliente_id": "cli-2",
+      "marca": "Apple",
+      "modelo": "MacBook Pro 13\" M1",
+      "serial": "C02F8769Q05D",
+      "tipo_equipo": "laptop",
+      "color": "Gris Espacial",
+      "accesorios_recibidos": [
+        "Cargador USB-C 61W",
+        "Estuche protector"
+      ],
+      "estado_ingreso": "bueno",
+      "observaciones_ingreso": "Chasis impecable. El teclado no responde en las teclas A, S, D, F. Posible derrame leve de líquido.",
+      "fotos_ingreso": [],
+      "fecha_ingreso": "2026-06-01T15:45:00Z",
+      "activo": true
+    },
+    {
+      "id": "eq-3",
+      "cliente_id": "cli-3",
+      "marca": "Sony",
+      "modelo": "PlayStation 5",
+      "serial": "A1230495-PS5",
+      "tipo_equipo": "consola",
+      "color": "Blanco/Negro",
+      "accesorios_recibidos": [
+        "Cable HDMI",
+        "Cable de corriente",
+        "1 control DualSense"
+      ],
+      "estado_ingreso": "regular",
+      "observaciones_ingreso": "Mucho polvo acumulado en respiraderos. Enciende pero arroja alerta de sobrecalentamiento a los 5 minutos de juego.",
+      "fotos_ingreso": [],
+      "fecha_ingreso": "2026-06-12T11:30:00Z",
+      "activo": true
+    },
+    {
+      "id": "eq-4",
+      "cliente_id": "cli-1",
+      "marca": "Xiaomi",
+      "modelo": "Redmi Note 11",
+      "serial": "SN-REDMI-8812739",
+      "tipo_equipo": "celular",
+      "color": "Azul Océano",
+      "accesorios_recibidos": [
+        "Caja original"
+      ],
+      "estado_ingreso": "malo",
+      "observaciones_ingreso": "Pantalla completamente destrozada, no da imagen. El botón de encendido está hundido.",
+      "fotos_ingreso": [],
+      "fecha_ingreso": "2026-06-15T09:40:00Z",
+      "activo": true
+    },
+    {
+      "id": "eq-1781984349506",
+      "cliente_id": "cli-1",
+      "marca": "xiaomi",
+      "modelo": "note 12",
+      "serial": "12345678912345",
+      "tipo_equipo": "celular",
+      "color": "gris",
+      "accesorios_recibidos": [
+        "Cargador",
+        "Bandeja SIM"
+      ],
+      "estado_ingreso": "regular",
+      "observaciones_ingreso": "",
+      "fotos_ingreso": [],
+      "fecha_ingreso": "2026-06-20T19:39:09.506Z",
+      "activo": true
+    },
+    {
+      "id": "eq-1781988160883",
+      "cliente_id": "cli-1",
+      "marca": "xiaomi",
+      "modelo": "note 12",
+      "serial": "1234567891234",
+      "tipo_equipo": "celular",
+      "color": "gris",
+      "accesorios_recibidos": [
+        "Cargador"
+      ],
+      "estado_ingreso": "nuevo",
+      "observaciones_ingreso": "",
+      "fotos_ingreso": [],
+      "fecha_ingreso": "2026-06-20T20:42:40.883Z",
+      "activo": true
+    }
+  ],
+  "reparaciones": [
+    {
+      "id": "rep-1",
+      "equipo_id": "eq-1",
+      "numero_orden": "REP-2026-0001",
+      "fecha_ingreso": "2026-05-10T10:15:00Z",
+      "fecha_entrega_prometida": "2026-05-13T17:00:00Z",
+      "fecha_entrega_real": "2026-05-13T16:30:00Z",
+      "falla_reportada": "Pantalla astillada y problemas al cargar.",
+      "diagnostico_tecnico": "Puerto de carga USB-C obstruido con pelusa. Pantalla LCD astillada pero el digitalizador funciona. Se requiere reemplazo de módulo de pantalla completo y mantenimiento de puerto de pin de carga.",
+      "trabajo_realizado": "Instalación de repuesto original de pantalla Samsung S21. Limpieza ultrasónica y resoldado térmico del conector de carga.",
+      "repuestos_utilizados": [
+        {
+          "nombre": "Pantalla AMOLED Samsung S21",
+          "cantidad": 1,
+          "costo": 110
+        }
+      ],
+      "costo_mano_obra": 40,
+      "costo_repuestos": 110,
+      "costo_total": 150,
+      "descuento": 10,
+      "monto_final": 140,
+      "estado": "entregado",
+      "prioridad": "normal",
+      "tecnico_asignado": "Erick Silva (Nivel 2)",
+      "dias_garantia": 30,
+      "fecha_inicio_garantia": "2026-05-13T16:30:00Z",
+      "fecha_fin_garantia": "2026-06-12T16:30:00Z",
+      "condiciones_garantia": "Garantía de 30 días limitada a fallas del repuesto de pantalla instalado. No cubre golpes, caídas, flexiones, ni exposición a humedad o agua.",
+      "presupuesto_aceptado": true,
+      "fecha_aceptacion": "2026-05-11T09:00:00Z",
+      "firma_cliente": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iNDAiPjx0ZXh0IHg9IjEwIiB5PSIyNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiPkp1YW4gUC48L3RleHQ+PC9zdmc+",
+      "estado_abandono": "activo",
+      "activo": true
+    },
+    {
+      "id": "rep-2",
+      "equipo_id": "eq-2",
+      "numero_orden": "REP-2026-0002",
+      "fecha_ingreso": "2026-06-01T15:45:00Z",
+      "fecha_entrega_prometida": "2026-06-05T18:00:00Z",
+      "falla_reportada": "Teclado inoperativo en rango A-S-D-F.",
+      "diagnostico_tecnico": "Se detectaron rastros de óxido en el flex del teclado y cortocircuito en línea de datos debido a derrame de café. Requiere reemplazo del Topcase completo (Teclado + Batería integrado de fábrica para este modelo).",
+      "trabajo_realizado": "",
+      "repuestos_utilizados": [
+        {
+          "nombre": "Keyboard Topcase Apple M1 13\"",
+          "cantidad": 1,
+          "costo": 180
+        }
+      ],
+      "costo_mano_obra": 60,
+      "costo_repuestos": 180,
+      "costo_total": 240,
+      "descuento": 0,
+      "monto_final": 240,
+      "estado": "diagnostico",
+      "prioridad": "normal",
+      "tecnico_asignado": "Daniel Romero (Master)",
+      "dias_garantia": 90,
+      "condiciones_garantia": "3 meses de garantía por desperfectos del teclado integrado. No aplica para daños por corrosión o humedad posterior.",
+      "presupuesto_aceptado": false,
+      "estado_abandono": "activo",
+      "activo": true
+    },
+    {
+      "id": "rep-3",
+      "equipo_id": "eq-3",
+      "numero_orden": "REP-2026-0003",
+      "fecha_ingreso": "2026-06-12T11:30:00Z",
+      "fecha_entrega_prometida": "2026-06-14T12:00:00Z",
+      "falla_reportada": "Se apaga por sobrecalentamiento.",
+      "diagnostico_tecnico": "Disipador térmico obstruido de polvo compacto. Metal líquido térmico original desplazado, dejando núcleos de la APU expuestos al aire. Se requiere delid del disipador, aplicación de metal líquido nuevo y limpieza integral profunda.",
+      "trabajo_realizado": "Limpieza con alcohol isopropílico al 99.9%, soplado de turbina de aire, re-aplicación de metal líquido térmico Thermal Grizzly Conductonaut en APU de PS5. Reensamblado completo.",
+      "repuestos_utilizados": [
+        {
+          "nombre": "Metal Líquido Thermal Grizzly",
+          "cantidad": 1,
+          "costo": 15
+        }
+      ],
+      "costo_mano_obra": 35,
+      "costo_repuestos": 15,
+      "costo_total": 50,
+      "descuento": 0,
+      "monto_final": 50,
+      "estado": "pruebas",
+      "prioridad": "urgente",
+      "tecnico_asignado": "Erick Silva (Nivel 2)",
+      "dias_garantia": 90,
+      "presupuesto_aceptado": true,
+      "fecha_aceptacion": "2026-06-12T13:40:00Z",
+      "estado_abandono": "activo",
+      "activo": true
+    },
+    {
+      "id": "rep-4",
+      "equipo_id": "eq-4",
+      "numero_orden": "REP-2026-0004",
+      "fecha_ingreso": "2026-04-10T10:00:00Z",
+      "falla_reportada": "Pantalla partida y botón encendido hundido.",
+      "diagnostico_tecnico": "Arrollado por vehículo. Daño estructural de la placa lógica principal con múltiples capacitores en corto y pistas rotas. Inviable reparación por presupuesto, excede el precio comercial del equipo.",
+      "trabajo_realizado": "",
+      "repuestos_utilizados": [],
+      "costo_mano_obra": 10,
+      "costo_repuestos": 0,
+      "costo_total": 10,
+      "descuento": 0,
+      "monto_final": 10,
+      "estado": "reparado",
+      "prioridad": "baja",
+      "tecnico_asignado": "Daniel Romero (Master)",
+      "dias_garantia": 30,
+      "presupuesto_aceptado": true,
+      "fecha_aceptacion": "2026-04-11T11:00:00Z",
+      "fecha_abandono": "2026-05-11T11:00:00Z",
+      "estado_abandono": "abandonado",
+      "activo": true
+    }
+  ],
+  "historial_reparacion": [
+    {
+      "id": "his-1",
+      "reparacion_id": "rep-1",
+      "fecha": "2026-05-10T10:15:00Z",
+      "usuario": "Erick Silva (Nivel 2)",
+      "tipo": "cambio_estado",
+      "comentario": "Equipo ingresado al taller. Registrado con marcas por uso normal y pantalla fisurada."
+    },
+    {
+      "id": "his-2",
+      "reparacion_id": "rep-1",
+      "fecha": "2026-05-11T08:30:00Z",
+      "usuario": "Erick Silva (Nivel 2)",
+      "tipo": "diagnostico",
+      "comentario": "Diagnóstico finalizado. Se determinó cambio de módulo AMOLED. Presupuesto enviado por $140 final."
+    },
+    {
+      "id": "his-3",
+      "reparacion_id": "rep-1",
+      "fecha": "2026-05-11T09:00:00Z",
+      "usuario": "Sistema",
+      "tipo": "aprobacion",
+      "comentario": "Presupuesto aceptado digitalmente por el cliente con firma en portal."
+    },
+    {
+      "id": "his-4",
+      "reparacion_id": "rep-1",
+      "fecha": "2026-05-13T14:00:00Z",
+      "usuario": "Erick Silva (Nivel 2)",
+      "tipo": "progreso",
+      "comentario": "Pieza de repuesto recibida e instalada. Iniciando pruebas de carga rápida, táctil e iluminación."
+    },
+    {
+      "id": "his-5",
+      "reparacion_id": "rep-1",
+      "fecha": "2026-05-13T16:30:00Z",
+      "usuario": "Sistema",
+      "tipo": "cambio_estado",
+      "comentario": "Equipo retirado por el cliente de forma presencial. Garantía de 30 días iniciada."
+    },
+    {
+      "id": "his-6",
+      "reparacion_id": "rep-2",
+      "fecha": "2026-06-01T15:45:00Z",
+      "usuario": "Daniel Romero (Master)",
+      "tipo": "cambio_estado",
+      "comentario": "Equipo ingresado. MacBook Pro 13\" con teclas atascadas."
+    },
+    {
+      "id": "his-7",
+      "reparacion_id": "rep-2",
+      "fecha": "2026-06-03T10:00:00Z",
+      "usuario": "Daniel Romero (Master)",
+      "tipo": "diagnostico",
+      "comentario": "Diagnóstico revela café derramado interno. Topcase oxidado. Presupuesto cargado por $240."
+    },
+    {
+      "id": "his-8",
+      "reparacion_id": "rep-3",
+      "fecha": "2026-06-12T11:30:00Z",
+      "usuario": "Erick Silva (Nivel 2)",
+      "tipo": "cambio_estado",
+      "comentario": "PlayStation 5 ingresado en modo urgente por servicio térmico."
+    },
+    {
+      "id": "his-9",
+      "reparacion_id": "rep-3",
+      "fecha": "2026-06-12T13:40:00Z",
+      "usuario": "Erick Silva (Nivel 2)",
+      "tipo": "aprobacion",
+      "comentario": "Cliente aprueba presupuesto de limpieza profunda y metal líquido inmediato."
+    }
+  ],
+  "facturas": [
+    {
+      "id": "fac-1",
+      "reparacion_id": "rep-1",
+      "numero_factura": "FAC-2026-0001",
+      "fecha_emision": "2026-05-13T16:30:00Z",
+      "subtotal": 120.69,
+      "iva": 19.31,
+      "total": 140,
+      "metodo_pago": "pago_movil",
+      "referencia_pago": "PM-9283741",
+      "estado": "pagada",
+      "created_at": "2026-05-13T16:30:00Z"
+    }
+  ]
+}
