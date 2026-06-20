@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Printer, X, CreditCard, Clock, Sparkles } from 'lucide-react';
 import { Cliente, Equipo, Reparacion } from '../types';
 
@@ -156,6 +157,20 @@ export default function TicketPrinter({ cliente, equipo, reparacion, onClose }: 
   const simulateWebUSBPrint = () => {
     alert(`Comando ESC/POS enviado de forma emulada via WebUSB a impresora térmica 58mm en puerto virtual.\n\nContenido transmitido:\n- ESC @ (Inicializar)\n- GS ! 17 (Doble Ancho/Alto para REP-ORDEN)\n- ESC a 1 (Centrar Cabecera)\n- Impresión de texto rasterizado de código de barras.\n- ESC d 4 (Avance de papel y corte parcial)`);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
+        e.preventDefault();
+        handleNativePrint();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [reparacion, cliente, entryDate, promiseDate]);
 
   return (
     <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 overflow-y-auto animate-fade-in" id="ticket-modal">
