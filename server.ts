@@ -34,8 +34,16 @@ const PORT = 3000;
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
-// Database filepath
-const DB_PATH = path.join(process.cwd(), 'taller_db.json');
+// Database filepath - dynamically fallback to /tmp if cwd is read-only (like on Vercel)
+let DB_PATH = path.join(process.cwd(), 'taller_db.json');
+try {
+  const testPath = path.join(process.cwd(), '.write-test');
+  fs.writeFileSync(testPath, 'test');
+  fs.unlinkSync(testPath);
+} catch (err) {
+  console.warn('[Storage] Working directory is read-only. Falling back to /tmp for local databases.');
+  DB_PATH = path.join('/tmp', 'taller_db.json');
+}
 
 // Initialize Gemini Client safely (Lazy loading pattern)
 let aiClient: any = null;
@@ -993,7 +1001,7 @@ app.get('/api/drive/folders', (req, res) => {
 app.post('/api/drive/backup', async (req, res) => {
   const db = await loadDatabase();
   const backupFolderId = 'DRIVE-BACKUP-FOLDER-' + new Date().toISOString().slice(0, 10);
-  const replicaPath = path.join(process.cwd(), `backup_db_${Date.now()}.json`);
+  const replicaPath = path.join(path.dirname(DB_PATH), `backup_db_${Date.now()}.json`);
   
   // Replicate db on workspace as simulated sync
   fs.writeFileSync(replicaPath, JSON.stringify(db, null, 2));
